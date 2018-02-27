@@ -1,0 +1,27 @@
+<ion-header>
+
+    <ion-navbar color="primary">
+        <ion-title>Planètes</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <!-- 
+    **********
+        -> *ngFor créer une boucle Angular qui parcours un array et créé pour chaque ligne un élément
+        -> | async (pipe) qui indique à Angular d'observer cette variable car elle changera plus tard
+        -> ? opérateur qui indique à Angular que cette variable peut être null et dans ce cas de ne pas planter
+    
+        -> l'objet planet créé à chaque itération de la boucle est directement passé au clic (event listener) et sera passé sur la page suivante (push) 
+        
+        -> dans une liste Ionic on créé des éléments multiples en utilisant cette boucle 
+        -> dans chaque tour de boucle on ajoute le nom de la planète en cours au bouton, créant ainsi une liste de boutons pour ouvrir la page détaillée de chaque planète
+    **********
+     -->
+
+    <button ion-item *ngFor="let planet of (planets | async)?.results" (click)="openDetails(planet)">
+        {{ planet.name }}
+    </button>
+</ion-content>

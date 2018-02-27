@@ -1,0 +1,39 @@
+<!--
+  Generated template for the PeopleDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar color="danger">
+        <ion-title>{{ people.name }}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card>
+        <ion-card-header>
+            {{ people.name }}
+        </ion-card-header>
+
+        <ion-card-content>
+            <p>Année de naissance : </p>{{ people.birth_year }}
+            <br>
+            <p>Yeux : </p>{{ people.eye_color }}
+            <br>
+            <p>Genre : </p> {{ people.gender }}
+        </ion-card-content>
+    </ion-card>
+
+
+
+
+    <ion-card>
+        <ion-card-content>
+            {{ people.schema }}
+        </ion-card-content>
+    </ion-card>
+</ion-content>

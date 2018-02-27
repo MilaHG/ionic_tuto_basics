@@ -1,0 +1,34 @@
+<ion-header>
+
+    <ion-navbar color="primary">
+        <ion-title>Films</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <!-- button[ion-button full (click)="openDetails()"]{Voir plus} -->
+    <!-- <button ion-button full (click)="openDetails()">Voir plus</button> -->
+    <!-- button[ion-button full (click)="goToPlanets()"]{Voir les planètes} -->
+    <!-- <button ion-button full (click)="goToPlanets()">Voir les planètes</button> -->
+
+
+    <!-- 
+        **********
+    -> *ngFor pour créer une boucle Angular qui parcours un array et crée de multiples éléments du même type
+    -> | async (pipe) qui indique à Angular d’observer cette variable car elle changera plus tard 
+    -> ? opérateur qui indique à Angular que cette variable peut être null et dans ce cas de ne pas planter 
+    
+    -> l’objet film créé à chaque itération de la boucle est directement passé au clic (écouteur d’événement) 
+    et sera passé sur la page suivante 
+    
+    -> dans une liste Ionic on créé des éléments multiples en utilisant cette boucle 
+    -> dans chaque tour de boucle on ajoute le titre du film en cours au bouton, créant ainsi une liste de boutons pour ouvrir la page détaillée de chaque élément film  
+        **********
+-->
+
+    <button ion-item *ngFor="let film of (films | async)?.results" (click)="openDetails(film)">
+        {{ film.title }}
+    </button>
+</ion-content>
